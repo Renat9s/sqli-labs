@@ -1,5 +1,5 @@
 # Visible error-based SQL injection
-
+# [lab](https://portswigger.net/web-security/sql-injection/blind/lab-sql-injection-visible-error-based)
 
 This lab contains a SQL injection vulnerability.
 The application uses a tracking cookie for analytics,
@@ -13,7 +13,7 @@ End Goals :
 ------------
 Analysis :
 1- test that parameters is vulnerable .
-# Intercept
+## Intercept
 open the burp suite catch request and send it to repeater to test possible SQL injections .
 
 ```
@@ -35,7 +35,7 @@ trackingId=MTHshxABbU9laks5' AND CAST ((SELECT 1) AS int)--
  ```
 
 - error saying that an `AND` condition must be a boolean
-- 
+
 
 3 - Modify the condition, you can simply add a comparison operator (`1=`):
 
@@ -54,7 +54,7 @@ TrackingId=MTHshxABbU9laks5' AND 1=CAST((SELECT 1) AS int)--
 trackingId=MTHshxABbU9laks5' AND 1=CAST((SELECT username FROM users) AS int )--
  ```
 
-## Error : Maximum number of characterso, lets delete the cookie value and see what happen
+### Error : Maximum number of characterso, lets delete the cookie value and see what happen
 - new error : more than one row returned
 
 5 - Since too many rows are returned, we can limit it to only 1 username . 
